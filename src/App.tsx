@@ -1,7 +1,6 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
-import "./App.css";
 import { useTranslation } from "react-i18next";
 
 function App() {
@@ -28,6 +27,10 @@ function App() {
         </p>
         <button onClick={() => i18n.changeLanguage("en")}>EN</button>
         <button onClick={() => i18n.changeLanguage("zh")}>ZH</button>
+        <div className="bg-red-500 text-white p-10 text-4xl">
+          🚨 Tailwind Test — This should be RED
+        </div>
+        <button className="ds-btn ds-btn-primary">Prefixed Button</button>
 
         <p>{t("label:name")}: John</p>
       </div>

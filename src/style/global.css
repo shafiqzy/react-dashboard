@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@plugin "daisyui" {
+  prefix: "ds-";
+}
+
+/* Now you can also add custom theme variables or utilities if needed */
