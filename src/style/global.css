@@ -1,7 +1,47 @@
 @import "tailwindcss";
 
+/* ✅ DaisyUI base setup */
 @plugin "daisyui" {
-  prefix: "ds-";
+  prefix: "ds-"; /* ➜ Ensures all DaisyUI components use ds- (ds-btn, ds-card) */
+  themes: mytheme --default; /* ➜ Set our custom theme as the default */
 }
 
-/* Now you can also add custom theme variables or utilities if needed */
+/* ✅ Define the custom DaisyUI theme */
+@plugin "daisyui/theme" {
+  name: "mytheme";
+  default: true;
+
+  /* 🎨 PRIMARY (Brand) */
+  --color-primary: #FF9E00;          /* Vivid orange leaning toward yellow */
+  --color-primary-content: #ffffff; /* White text on orange */
+
+  /* 🎨 SECONDARY (Neutral Gray for UI) */
+  --color-secondary: #5C5C5C;
+  --color-secondary-content: #ffffff;
+
+  /* 🎨 ACCENT (Soft Gray for cards, backgrounds) */
+  --color-accent: #F2F2F2;
+  --color-accent-content: #1E1E1E; /* Dark text on light background */
+
+  /* 🎨 NEUTRAL (Dark Accent for navbars, footers) */
+  --color-neutral: #1E1E1E;
+  --color-neutral-content: #ffffff;
+
+  /* 🎨 BASE COLORS */
+  --color-base-100: #FFFFFF; /* White page background */
+
+  /* ✅ Optional System Colors */
+  --color-info: #3ABFF8;     /* Light blue for info alerts */
+  --color-success: #22C55E;  /* Green for success states */
+  --color-warning: #FBBD23;  /* Yellow for warnings */
+  --color-error: #EF4444;    /* Red for errors */
+
+  /* 🎯 Optional: Add subtle shadows for techy depth */
+  --radius-box: 0.75rem;     /* Rounded cards/buttons */
+  --radius-btn: 0.5rem;
+  --radius-badge: 0.5rem;
+
+  /* Modern startup vibe — cleaner default shadows */
+  --shadow-btn: 0 2px 4px rgba(0, 0, 0, 0.15);
+  --shadow-card: 0 4px 10px rgba(0, 0, 0, 0.1);
+}

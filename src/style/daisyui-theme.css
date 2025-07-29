@@ -1,0 +1,3 @@
+/* ✅ src/global.css */
+@import "tailwindcss";
+@import "src/styles/daisyui-theme.css"; /* DaisyUI theme file */
