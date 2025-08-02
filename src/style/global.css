@@ -1,47 +1,61 @@
 @import "tailwindcss";
 
-/* ✅ DaisyUI base setup */
+/* DaisyUI setup */
 @plugin "daisyui" {
-  prefix: "ds-"; /* ➜ Ensures all DaisyUI components use ds- (ds-btn, ds-card) */
-  themes: mytheme --default; /* ➜ Set our custom theme as the default */
+  prefix: "ds-";
 }
 
-/* ✅ Define the custom DaisyUI theme */
+/* Your custom theme */
 @plugin "daisyui/theme" {
   name: "mytheme";
   default: true;
+  prefersdark: false;
+  color-scheme: "light";
 
-  /* 🎨 PRIMARY (Brand) */
-  --color-primary: #FF9E00;          /* Vivid orange leaning toward yellow */
-  --color-primary-content: #ffffff; /* White text on orange */
+/* 🎨 Base colors (Dark Navy Theme) */
+--color-base-100: #1d2120;
+--color-base-200: #252a29;
+--color-base-300: #303635;
+--color-base-content: #f7f8f9;
 
-  /* 🎨 SECONDARY (Neutral Gray for UI) */
+
+
+  /* 🎨 Branding */
+  --color-primary: #FF9E00;
+  --color-primary-content: #ffffff;
   --color-secondary: #5C5C5C;
   --color-secondary-content: #ffffff;
-
-  /* 🎨 ACCENT (Soft Gray for cards, backgrounds) */
   --color-accent: #F2F2F2;
-  --color-accent-content: #1E1E1E; /* Dark text on light background */
+  --color-accent-content: #000000;
 
-  /* 🎨 NEUTRAL (Dark Accent for navbars, footers) */
+  /* 🎨 UI roles */
   --color-neutral: #1E1E1E;
   --color-neutral-content: #ffffff;
 
-  /* 🎨 BASE COLORS */
-  --color-base-100: #FFFFFF; /* White page background */
+  /* ✅ Optional system colors */
+  --color-info: #3ABFF8;
+  --color-success: #22C55E;
+  --color-warning: #FBBD23;
+  --color-error: #EF4444;
 
-  /* ✅ Optional System Colors */
-  --color-info: #3ABFF8;     /* Light blue for info alerts */
-  --color-success: #22C55E;  /* Green for success states */
-  --color-warning: #FBBD23;  /* Yellow for warnings */
-  --color-error: #EF4444;    /* Red for errors */
+  /* Optional design tokens */
+  --radius-selector: 0.25rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.5rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 0;
+  --noise: 0;
+}
 
-  /* 🎯 Optional: Add subtle shadows for techy depth */
-  --radius-box: 0.75rem;     /* Rounded cards/buttons */
-  --radius-btn: 0.5rem;
-  --radius-badge: 0.5rem;
+/* ✅ Global scrollbar fix */
+@layer base {
+  html {
+    /* Option 1: Always show scrollbar (most compatible) */
+    overflow-y: scroll;
 
-  /* Modern startup vibe — cleaner default shadows */
-  --shadow-btn: 0 2px 4px rgba(0, 0, 0, 0.15);
-  --shadow-card: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Option 2: Modern approach (keeps layout stable but cleaner) */
+    scrollbar-gutter: stable;
+  }
 }
