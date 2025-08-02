@@ -1,4 +1,19 @@
 {
   "name": "Name",
-  "email": "Email"
+  "email": "Email",
+  "dashboard": "Dashboard",
+  "button": "Button",
+  "settings": "Settings",
+  "logout": "Logout",
+  "click_me": "Click Me",
+  "change_lang_en": "Switch to English",
+  "change_lang_zh": "Switch to Chinese",
+  
+  "sales_performance": "Sales Performance",
+  "new_users": "New Users",
+  "total_orders": "Total Orders",
+  "sales_overview": "Sales Overview",
+  "track_sales_performance": "Track daily, weekly, and monthly sales performance.",
+  "user_acquisition": "Number of new users registered this month.",
+  "orders_overview": "Overview of all customer orders and trends."
 }

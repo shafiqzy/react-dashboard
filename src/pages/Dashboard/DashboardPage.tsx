@@ -1,42 +1,53 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import { useTranslation } from "react-i18next";
+import { FaChartBar, FaUsers, FaShoppingCart } from "react-icons/fa";
+import Card from "src/components/Card/Card";
+import CustomChartCard from "./Card/CustomChart";
 
 export default function DashboardPage() {
-  const [count, setCount] = useState(0);
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation(); // ✅ Hook for translations
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-        <button onClick={() => i18n.changeLanguage("en")}>EN</button>
-        <button onClick={() => i18n.changeLanguage("zh")}>ZH</button>
-        <div className="bg-red-500 text-white p-10 text-4xl">
-          🚨 Tailwind Test — This should be RED
-        </div>
-        <button className="ds-btn ds-btn-primary">Prefixed Button</button>
+    <div>
+      <h1 className="text-3xl font-bold mb-4">{t("label:dashboard")}</h1>
 
-        <p>{t("label:name")}: John</p>
+      <div className="grid grid-cols-3 gap-4">
+        {/* Card 1: Sales Performance */}
+        <Card
+          title={t("label:sales_performance")}
+          icon={<FaChartBar className="text-blue-500" />}
+          stat="$12,430"
+        >
+          {t("label:track_sales_performance")}
+        </Card>
+
+        {/* Card 2: New Users */}
+        <Card
+          title={t("label:new_users")}
+          icon={<FaUsers className="text-green-500" />}
+          stat="1,280"
+        >
+          {t("label:user_acquisition")}
+        </Card>
+
+        {/* Card 3: Orders */}
+        <Card
+          title={t("label:total_orders")}
+          icon={<FaShoppingCart className="text-orange-500" />}
+          stat="845"
+        >
+          {t("label:orders_overview")}
+        </Card>
+
+        {/* Chart Card */}
+        <Card title={t("label:sales_overview")}>
+          <CustomChartCard
+            title={t("label:sales_overview")}
+            type="area"
+            multipleDatasets={true}
+            useGradient={true}
+          />
+        </Card>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   );
 }

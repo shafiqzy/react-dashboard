@@ -9,8 +9,9 @@ const colors = [
   "warning",
   "error",
   "neutral",
-] as const;
+] as const; // Use 'as const' to ensure type inference for the colors
 
+// Import VariantType from the Button component
 const variants = ["fill", "outline", "ghost"] as const;
 
 export default function ButtonPage() {
@@ -32,6 +33,12 @@ export default function ButtonPage() {
           ))}
         </div>
       ))}
+      <div className="p-6 bg-base-100">
+        <button className="ds-btn ds-btn-primary">Primary</button>
+        <button className="ds-btn ds-btn-success">Secondary</button>
+        <button className="ds-btn ds-btn-warning">Accent</button>
+        <button className="ds-btn ds-btn-info">Neutral</button>
+      </div>
     </div>
   );
 }

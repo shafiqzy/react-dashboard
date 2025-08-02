@@ -1,4 +1,19 @@
 {
   "name": "姓名",
-  "email": "电子邮件"
+  "email": "电子邮箱",
+  "dashboard": "仪表盘",
+  "button": "按钮",
+  "settings": "设置",
+  "logout": "退出登录",
+  "click_me": "点击我",
+  "change_lang_en": "切换到英文",
+  "change_lang_zh": "切换到中文",
+
+  "sales_performance": "销售表现",
+  "new_users": "新用户",
+  "total_orders": "订单总数",
+  "sales_overview": "销售概览",
+  "track_sales_performance": "跟踪每日、每周和每月的销售表现。",
+  "user_acquisition": "本月注册的新用户数量。",
+  "orders_overview": "查看所有客户订单和趋势。"
 }
