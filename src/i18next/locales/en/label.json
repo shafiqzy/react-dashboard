@@ -6,8 +6,8 @@
   "settings": "Settings",
   "logout": "Logout",
   "click_me": "Click Me",
-  "change_lang_en": "Switch to English",
-  "change_lang_zh": "Switch to Chinese",
+  "en": "English",
+  "zh": "Chinese",
   
   "sales_performance": "Sales Performance",
   "new_users": "New Users",

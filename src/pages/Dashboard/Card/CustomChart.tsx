@@ -5,10 +5,10 @@ import {
   FaMountain,
   FaRegCircle,
   FaChartPie,
-  FaChevronDown,
 } from "react-icons/fa";
 import ChartComponent from "src/components/Chart/Chart";
 import Dropdown from "src/components/Dropdown/Dropdown";
+import { SALES_OVERVIEW_DATA } from "src/constants/Dashboard/Dashboard";
 
 interface CustomChartCardProps {
   title: string;
@@ -75,7 +75,6 @@ export default function CustomChartCard({
   ] as const;
 
   const activeIndex = CHART_TYPES.findIndex((i) => i.value === chartType);
-  const activeItem = CHART_TYPES[activeIndex];
 
   return (
     <div className="ds-card bg-base-100 shadow-md p-4 rounded-xl">
@@ -84,13 +83,6 @@ export default function CustomChartCard({
 
         {/* ✅ Use Dropdown with startIcon */}
         <Dropdown
-          buttonContent={
-            <div className="flex items-center space-x-1">
-              <span className="text-lg">{activeItem.icon}</span>
-              <span>{activeItem.label}</span>
-              <FaChevronDown className="ml-1 text-sm" aria-hidden="true" />
-            </div>
-          }
           defaultActiveIndex={activeIndex}
           items={CHART_TYPES.map((item) => ({
             label: item.label, // plain text label now
@@ -102,7 +94,7 @@ export default function CustomChartCard({
 
       <ChartComponent
         type={chartType}
-        data={chartData}
+        data={SALES_OVERVIEW_DATA}
         options={chartOptions}
         legendPosition="bottom"
         useGradient={useGradient}

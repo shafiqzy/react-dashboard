@@ -19,8 +19,8 @@ export default function Header() {
   ];
 
   const LANG_ITEMS = [
-    { labelKey: "label:change_lang_en", onClick: () => changeLanguage("en") },
-    { labelKey: "label:change_lang_zh", onClick: () => changeLanguage("zh") },
+    { labelKey: "label:en", onClick: () => changeLanguage("en") },
+    { labelKey: "label:zh", onClick: () => changeLanguage("zh") },
   ];
 
   return (
@@ -52,7 +52,6 @@ export default function Header() {
             ))}
 
             <Dropdown
-              buttonContent="🌐"
               items={LANG_ITEMS.map((item) => ({
                 label: t(item.labelKey),
                 onClick: item.onClick,
@@ -63,7 +62,6 @@ export default function Header() {
           {/* ✅ Mobile Nav (dropdown + hamburger) */}
           <div className="md:hidden flex items-center gap-2">
             <Dropdown
-              buttonContent="🌐"
               items={LANG_ITEMS.map((item) => ({
                 label: t(item.labelKey),
                 onClick: item.onClick,
