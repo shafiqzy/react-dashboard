@@ -13,7 +13,7 @@ export default function Header() {
   };
 
   const NAV_LINKS = [
-    { href: ROUTES.dashboard, labelKey: "label:dashboard" },
+    { href: ROUTES.home, labelKey: "label:dashboard" },
     { href: ROUTES.button, labelKey: "label:button" },
     { href: ROUTES.logout, labelKey: "label:logout" },
   ];

@@ -9,7 +9,7 @@ export default function PageRoutes() {
     <BaseLayout>
       <Switch>
         <Route path={ROUTES.home}>
-          <ButtonPage />
+          <DashboardPage />
         </Route>
         <Route path={ROUTES.dashboard}>
           <DashboardPage />
